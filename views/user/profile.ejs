@@ -1,0 +1,30 @@
+<div class="container text-center">
+    <h3>Szia <%=profileData.userName%>!</h3>
+
+    <% message.forEach((m)=> {%>
+        <h4 class="<%=success ? 'color-success' : 'color-error'%>">
+            <%=m%>
+        </h4>
+    <% }); %>
+
+    <form class="box" method="POST" action="/user/profil">
+        <h3>Felhasználónév</h3>
+        <input type="text" name="userName"
+        value="<%=profileData.userName%>">
+
+        <h3>Email cím</h3>
+        <input type="text" name="email"
+        value="<%=profileData.email%>">
+
+        <h3>Vezetéknév</h3>
+        <input type="text" name="lastName"
+        value="<%=profileData.lastName != null ? profileData.lastName : ''%>">
+
+        <h3>Keresztnév</h3>
+        <input type="text" name="firstName"
+        value="<%=profileData.firstName != null ? profileData.firstName : ''%>">
+
+        <button>Mentés</button>
+    </form>
+
+</div>

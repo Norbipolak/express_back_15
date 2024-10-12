@@ -1,0 +1,135 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 10px 0;
+}
+
+h1 {
+    color: #123456;
+}
+
+h2 {
+    color: #19498a;
+}
+
+h3 {
+    color: #23a8a6;
+}
+
+h4 {
+    color: #787878;
+}
+
+h5 {
+    color: #979797;
+}
+
+nav {
+    height: 60px;
+    background-color: #123465;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.selected-menu {
+    background-color: #1b4e96; 
+}
+
+.container {
+    max-width: 1080px;
+    padding: 15px;
+    margin: 15px auto;
+}
+
+input, button, select, textarea {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+}
+
+input, select {
+    width: 80%;
+}
+
+button {
+    cursor: pointer;
+}
+
+.box {
+    background-color: #efefef;
+    border: 1px solid #dedede;
+    padding: 15px;
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+    width:100%;
+}
+
+.error-error {
+    color: #a31d1d;
+}
+
+.color-success {
+    color: #32ac1a;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 15px;
+}
+
+.admin-product-img {
+    width: 350px;
+    height: 350px;
+    margin: 15px auto;
+    position: relative;
+}
+
+.admin-product-img img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.position-absolute-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 15px;
+    width: 100px;
+}
+
+.pagination {
+    /*
+        most a két nyíl egymás alatt van ebben a div-ben, azért kell a display: flex;
+    */
+    display: flex;
+    width: 300px;
+    justify-content: space-evenly; /*merőlegesen eltávoladjanak egymástól a 300px-es width-ben, tehát az egyik nyíl jobb oldalon a másik bal*/
+    margin:auto; /*hogy középen legyen*/
+}

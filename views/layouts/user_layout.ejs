@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include("../common/head", {title: title, baseUrl: baseUrl})%>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li class="<%=page === 'profil' ? 'selected-menu' : '' %>">
+                <a href="/user/profil">Profil</a>
+            </li>
+            <li class="<%=page === 'címek' ? 'selected-menu' : '' %>">
+                <a href="/user/címek">Címek</a>
+            </li>
+            <li class="<%=page === 'vasarlasaim' ? 'selected-menu' : '' %>">
+                <a href="/user/vasarlasaim">Vásárlásaim</a>
+            </li>
+            <li>
+                <a href="/logout">Kijelentkezés</a>
+            </li>
+        </ul>
+    </nav>
+
+    <%-body%>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<div class="container">
+        <% message.forEach((m)=> {%>
+            <h4 class="<%=success ? 'color-success' : 'color-error'%>">
+                <%=m%>
+            </h4>
+        <% }); %>
+
+    <form method="POST" class="box" 
+    action="<%=baseUrl%>/admin/create-category/<%=categoryData ? categoryData.categoryID : ''%>" >
+        <h3>Kategória elnevezése</h3>
+        <input type="text" 
+        name="categoryName"
+        value="<%=categoryData ? categoryData.categoryName : ''%>">
+
+        <h3>Kategória leírása</h3>
+        <textarea style="width: 80%;min-height: 100px;" name="categoryDesc">
+            <%=categoryData ? categoryData.categoryDesc : ''%> 
+        </textarea>
+
+        <button>
+            <%= categoryData ? "felülírás" : "létrehozás %>">
+        </button>
+    </form>
+</div>

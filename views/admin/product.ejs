@@ -1,0 +1,65 @@
+<div class="container center-text">
+    <% message.forEach((m)=> {%>
+        <h4 class="<%=success ? 'color-success' : 'color-error'%>">
+            <%=m%>
+        </h4>
+    <% }); %>
+
+    <% if(productData && productData.filePath) { %>
+        <form method="POST" class="admin-product-img" 
+        action="<%=baseUrl%/admin/delete-product-image/<%=productData.productID%>">
+            <img src="<%=productData.filePath%>">
+
+            <input type="hidden" value="<%=productData.productID%>">
+
+            <button class="position-absolute-btn">Törlés</button>
+        </form>
+    <% } %>
+
+    <% if(productData) { %>
+        <form class="box" method="POST" enctype="multipart/form-data"
+        action="<%=baseUrl%/admin/peoduct-image/<%=productData.productID%>>">
+    
+            <input type="file" name="productImage">
+    
+            <button>Feltöltés</button>
+        </form>
+    <% } %>
+
+    <form method="POST" class="box" action="<%=baseUrl%/admin/create-product/<%= productData ? productData.producID : ''>">
+        <h3>Termék kategória</h3>
+        <select name="productCategory">
+            <option value="0">Válassz kategóriát</option>
+            <% categories.forEach((c)=> { %>
+                <option <%= productData && productData.productCategory == c.categoryID ? "selected" : '' %>
+                value="<%=c.categoryID%>"><%=c.categoryName%></option>
+            <% })%>
+        </select>
+
+        <h3>Termék cím</h3>
+        <input type="text" 
+        value="<%= productData ? productData.title : ''>"
+        name="title">
+
+        <h3>Termék név</h3>
+        <input type="text" 
+        value="<%= productData ? productData.productName : ''>"
+        name="productName">
+
+        <h3>Ár</h3>
+        <input type="number" 
+        value="<%= productData ? productData.price : 0>"
+        name="price">
+
+        <h3>Diszkont ár</h3>
+        <input type="number" 
+        value="<%= productData ? productData.discountPrice : 0>"
+        name="discountPrice">
+
+        <h3>Termék leírás</h3>
+        <textarea style="min-width: 80%;min-height: 150px;" 
+        name="productDesc">value="<%= productData ? productData.productDesc : ''>"</textarea>
+
+        <button>Küldés</button>
+    </form>
+</div>

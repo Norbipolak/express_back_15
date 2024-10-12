@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="grid">
+        <% users.forEach(u=> {  %>
+            <div class="box">
+                <h4>Név</h4>
+                <%= u.firstName + "" + u.lastName%>
+
+                <h4>Felhasználónév</h4>
+                <%= u.userName%>
+
+                <h4>Email</h4>
+                <%= u.email%>
+            </div>
+        <% }) %>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+    <button>
+        <a href="/user/cim-letrehozasa">
+            Cím létrehozása
+        </a>
+    </button>
+
+    <div class="grid">
+        <% addresses.forEach((a)=> {%>
+            <div class="box">
+                <h3>Cím típusa</h3>
+                <h4><%=a.addressTypeName%></h4>
+
+                <h3>Írányítószám/város</h3>
+                <h4><%=a.postalCode%> <%=a.settlement%></h4>
+
+                <h3>Utca/Házszám</h3>
+                <h4><%=a.street%> <%=a.houseNumber%></h4>
+
+                <h3>Emelet/Ajtó</h3>
+                <h4><%=a.floorNumber%> <%=a.doorNumber%></h4>
+
+                <a href="http://localhost:3000/user/cim-letrehozasa?addressID<%=a.addressID%>">Megnyitás</a>
+            </div>
+        <% }) %>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include("../common/head", {title: title, baseUrl: baseUrl})%>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li class="<%=page === 'profil' ? 'selected-menu' : '' %>">
+                <a href="/admin/profil">Profil</a>
+            </li>
+            <li class="<%=page === 'felhasznalok' ? 'selected-menu' : '' %>">
+                <a href="/admin/felhasznalok">Felhasználók</a>
+            </li>
+            <li class="<%=page === 'termek-kategoriak' ? 'selected-menu' : '' %>">
+                <a href="/admin/termek-kategoriak">Termék kategóriák</a>
+            </li>
+            <li class="<%=page === 'termekek' ? 'selected-menu' : '' %>">
+                <a href="/admin/termekek">Termékek</a>
+            </li>
+            <li>
+                <a href="/logout">Kijelentkezés</a>
+            </li>
+        </ul>
+    </nav>
+
+    <%-body%>
+</body>
+</html>

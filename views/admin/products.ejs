@@ -1,0 +1,40 @@
+<div class="container">
+<a href="<%= baseUrl%>/admin/termek">
+    <button>Létrehozás</button>
+</a>
+
+    <div class="grid">
+        <% productData.products.forEach(p=> {  %>
+            <div class="box">
+                <h4>Név</h4>
+                <%= p.productName%>
+
+                <h4>Kategória</h4>
+                <%= p.categoryName%>
+
+
+
+                <a href="<%= baseUrl%>/admin/termek/<%=p.productID%>">
+                    <button>Megnyítás</button>
+                </a>
+
+                <form method="post" action="<%= baseUrl%>/admin/delete-product/<%=p.productID%>">
+                    <button>Törlés</button>
+                </form>
+            </div>
+        <% }) %>
+    </div>
+
+    <div class="pagination">
+            <a href="<%=baseUrl%>/admin/termekek?page=<%=page > 1 ? page-1 : 1%>">
+                <button>
+                    &lt;
+                </button>
+            </a>
+            <a href="<%=baseUrl%>/admin/termekek?page=<%=page < productData.maxPage ? page+1 : productData.maxPage>">
+                <button>
+                    &lt;
+                </button>
+            </a>
+    </div>
+</div>

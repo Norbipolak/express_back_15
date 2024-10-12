@@ -1,0 +1,40 @@
+<div class="container text-center"></div>
+    <form class="box" method="POST" action="/user/create_address/<%=address.addressID ? address.addressID : ""%>">
+
+        <% message.forEach((m)=> {%>
+            <h4 class="<%=success ? 'color-success' : 'color-error'%>">
+                <%=m%>
+            </h4>
+        <% }); %>
+
+        <h3>Cím típusa</h3>
+        <select name="addressType">
+            <option value="0">Válassz típust</option> 
+            <% addressTypes.forEach((a)=> { %>
+                <option <%=a.typeID == address.addressTypeID ? "selected" : ""%>
+                value="<%= a.typeID %>"><%= a.typeName %></option>
+            <% }) >% 
+        </select>
+
+        <h3>Írányítószám</h3>
+        <input type="text" name="postalCode" value="<%=address.postalCode ? address.postalCode : ''>">
+
+        <h3>Település</h3>
+        <input type="text" name="settlement" value="<%=address.settlement ? address.settlement : ''>">
+
+        <h3>Közterület neve és jellege</h3>
+        <input type="text" name="street" value="<%=address.street ? address.street : ''>">
+
+        <h3>Házszám</h3>
+        <input type="text" name="houseNumber" value="<%=address.houseNumber ? address.houseNumber : ''>">
+
+        <h3>Emelet</h3>
+        <input type="text" name="floorNumber" value="<%=address.floorNumber ? address.floorNumber : ''>">
+
+        <h3>Ajtó</h3>
+        <input type="text" name="doorNumber" value="<%=address.doorNumber ? address.doorNumber : ''>">
+
+        <button>Mentés</button>
+    </form>
+</div>
+
